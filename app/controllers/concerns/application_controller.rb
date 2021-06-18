@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+<<<<<<< HEAD:app/controllers/application_controller.rb
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
@@ -39,3 +40,8 @@ class ApplicationController < ActionController::Base
   end
 
 end
+=======
+  
+
+end
+>>>>>>> develop:app/controllers/concerns/application_controller.rb
