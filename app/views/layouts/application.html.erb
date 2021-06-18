@@ -25,8 +25,8 @@
                   <%# end %>
               </li>
               <li>
-                <%#= link_to destroy_user_session_path, method: :delete, class: 'nav-link fas fa-sign-out-alt nav-link text-light' do %> ログアウト
-                  <%# end %>
+                <%= link_to destroy_customer_session_path, method: :delete, class: 'nav-link fas fa-sign-out-alt nav-link text-light' do %> ログアウト
+                  <% end %>
               </li>
             <%# else %>
               <li>
@@ -38,12 +38,12 @@
                   <%# end %>
               </li>
               <li>
-                <%#= link_to new_user_registration_path, class: 'nav-link fas fa-user-plus nav-link text-light' do %> 新規登録
-                  <%# end %>
+                <%= link_to new_customer_registration_path, class: 'nav-link fas fa-user-plus nav-link text-light' do %> 新規登録
+                  <% end %>
               </li>
               <li>
-                <%#= link_to new_user_session_path, class: 'nav-link fas fa-sign-in-alt nav-link text-light' do %> ログイン
-                  <%# end %>
+                <%= link_to new_customer_session_path, class: 'nav-link fas fa-sign-in-alt nav-link text-light' do %> ログイン
+                  <% end %>
               </li>
               <%# end %>
           </ul>

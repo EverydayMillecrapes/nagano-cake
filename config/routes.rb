@@ -9,9 +9,16 @@ Rails.application.routes.draw do
   passwords:     'admins/passwords',
   registrations: 'admins/registrations'
 }
-  devise_for :customers
+   devise_for :customers, controllers: {
+  sessions:      'customers/sessions',
+  passwords:     'customers/passwords',
+  registrations: 'customers/registrations'
+}
+  # devise_scope :customers do
+  #   get "/customers/sign_out" => "customers/sessions/destroy"
+  # end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :customers,only: [:show,:index,:edit,:update]
+  resources :customers,only: [:show,:edit,:update]
   get "customers/quit" => "customers#quit"
   get "customers/out" => "customers#out"
   
