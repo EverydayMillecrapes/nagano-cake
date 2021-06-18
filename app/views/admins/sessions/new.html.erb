@@ -1,6 +1,6 @@
 <h2>管理者ログイン</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: admin_session_path(resource_name)) do |f| %>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -8,8 +8,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.label :encrypted_password %><br />
+    <%= f.password_field :encrypted_password, autocomplete: "current-password" %>
   </div>
 
   <div class="actions">
