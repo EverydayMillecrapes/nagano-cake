@@ -14,7 +14,8 @@ ActiveRecord::Schema.define(version: 20210617223215) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email"
-    t.string   "encrypted_password"
+    t.string   "encrypted_password" 
+    # 確認用パスワード
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.string   "reset_password_token"
