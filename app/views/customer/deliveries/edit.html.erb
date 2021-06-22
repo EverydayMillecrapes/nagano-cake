@@ -1,6 +1,9 @@
-<h2>配送先編集</h2>
+<div class="container">
+  <div class="row">
+    <div class='px-3 mx-auto'>
+        <h2>配送先編集</h2>
 
-<%= form_for(@delivery, url: {controller: 'deliveries', action: 'update' }) do |f| %>
+        <%= form_for(@delivery, url: {controller: 'deliveries', action: 'update' }) do |f| %>
 
                 <div>
                     <%= f.label :"郵便番号(ハイフンなし)"  %>
@@ -18,4 +21,7 @@
                 </div>
                 <%= f.submit '変更内容を保存' %>
             </div>
-<% end %>
+        <% end %>
+    </div>
+  </div>
+</div>
