@@ -12,8 +12,8 @@
 
 
       <div>
-        <%= f.submit "退会しない", class: 'btn btn-primary btn-block' %>
-        <%= f.submit "退会する", class: 'btn btn-danger btn-block' %>
+        <%= link_to "退会しない", customer_customer_path(@customer.id), class: 'btn btn-primary btn-block' %>
+        <%= link_to "退会する", customer_customers_out_path, class: 'btn btn-danger btn-block', method: :patch %>
       </div>
 
     </div>
