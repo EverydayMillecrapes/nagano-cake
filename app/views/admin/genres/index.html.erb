@@ -1,3 +1,4 @@
+<%= render 'layouts/admin_header' %>
 <div class="container">
   <div class="row">
     <div class='px-3 mx-auto'>
@@ -7,8 +8,8 @@
                 <div>
                     <%= f.label :"ジャンル名"  %>
                     <%= f.text_field :name %>
+                <%= f.submit '新規登録', class: "btn btn-info"%>
                 </div>
-                <%= f.submit '新規登録' %>
             </div>
         <% end %>
 
@@ -26,7 +27,7 @@
                    <%= genre.name %>
                  </td>
                  <td>
-                      <%= link_to "編集する",edit_admin_genre_path(genre.id) %>
+                      <%= link_to "編集する", edit_admin_genre_path(genre.id), class: 'btn btn-info' %>
                  </td>
             </tbody>
         <% end %>
