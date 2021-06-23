@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class='px-3 mx-auto'>
+        <h2>ジャンル編集</h2>
+
+        <%= form_for(@genre, url: {controller: 'genres', action: 'update' }) do |f| %>
+
+                <div>
+                    <%= f.label :"ジャンル名"  %>
+                    <%= f.text_field :name %>
+                </div>
+                
+                <%= f.submit '変更を保存' %>
+            </div>
+        <% end %>
+    </div>
+  </div>
+</div>
