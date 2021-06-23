@@ -1,0 +1,41 @@
+<%= render 'layouts/customer_header' %>
+<div class="container my-5">
+  <div class="col-9 my-3">
+  	<div class="row">
+
+	    <div class="col-5">
+        <%= attachment_image_tag @product, :image, size: '50x50', format: "jpeg", fallback: 'noimage.jpg', size: '300x300', class: "rounded" %>
+	    </div>
+
+      <div class="col-5">
+        <div class="row">
+          <h4 class="red-border px-3 pb-1"><%= @product.name %></h4>
+        </div>
+
+        <div class="row mt-3">
+          <p class="ml-5"><%= @product.introduction %></p>
+        </div>
+
+        <div class="row">
+          <strong class="red-border px-3 ml-auto"><%= (@product.non_tax_price * 1.1).floor %>円 (税込)</strong>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="offset-6">
+
+        <!--<div class="row">-->
+        <!--    <%#= form_for(@cart, url: {controller: 'deliveries', action: 'create' }) do |f| %>-->
+        <!--    <%#= f.number_field :quantity, min:1, placeholder: "個数選択" %>-->
+        <!--    <%#= f.hidden_field :product_id, :value => @product.id %>-->
+        <!--    <%#= f.submit "カートに入れる", class: "btn btn-outline-danger" %>-->
+      　　<!--<%# end %>-->
+        <!--</div>-->
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
