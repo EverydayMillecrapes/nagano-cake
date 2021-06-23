@@ -16,16 +16,17 @@ Rails.application.routes.draw do
 namespace :customer,path: "" do
   root to: 'homes#top'
   get  "home/about"  => "homes#about"
-  resources :customers,only: [:show,:edit,:update]
   get "customers/quit" => "customers#quit"
-  get "customers/out" => "customers#out"
+  patch "customers/out" => "customers#out"
+  resources :customers,only: [:show,:edit,:update]
 
-  resources :cart_products,only:[:index,:update,:create,:destroy]
   delete 'cart_products' => 'all_destroy'
+  resources :cart_products,only:[:index,:update,:create,:destroy]
+
   resources :products,only: [:show,:index]
-  resources :orders, only: [:new, :create, :index, :show]
   post 'orders/log' => 'customers#log'
   get 'orders/thanx' => 'orders#thanx'
+  resources :orders, only: [:new, :create, :index, :show]
   resources :deliveries, only: [:index, :create, :destroy, :edit, :update]
 end
 
