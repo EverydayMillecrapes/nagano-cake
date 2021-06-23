@@ -7,3 +7,4 @@ class Product < ApplicationRecord
 	attachment :image
 # 	enum status: [:販売可, :販売不可]
 end
+
