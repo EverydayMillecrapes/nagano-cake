@@ -7,6 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Admin.create!(
-   email: 'every_day_milecrapes@gmail.com',
+   email: 'every.day_milecrapes@gmail.com',
    password: 'dmm2021',
+)
+
+Genre.create!(
+   name: "ケーキ"
+)
+
+Product.create!(
+   genre_id: 1,
+   image_id: nil,
+   name: "ミルクレープ",
+   introduction: "あすかちゃんの手作りミルクレープ",
+   non_tax_price: 1000,
 )
