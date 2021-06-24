@@ -1,1 +1,37 @@
-<%= render 'layouts/admin_header' %>
+<%= render 'layouts/customer_header' %>
+<div class="container">
+  <div class="row">
+    <div class='px-3 mx-auto'>
+        <h2>注文履歴一覧</h2>
+
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr class="info">
+                    <th>購入日時</th>
+                    <th>購入者</th>
+                    <th>注文個数</th>
+                    <th>注文ステータス</th>
+                </tr>
+            </thead>
+
+        
+        <% @order_products.each do |order_product| %>
+            <tbody>
+                 <td>
+                   <%= order_product.order.created_at.strftime("%Y/%m/%d/ %H:%M:%S") %>
+                 </td>
+                 <td>
+                   <%= order_product.order.customer.full_name %>
+                 </td>
+                 <td>
+                   <%= order_product.amount %>
+                 </td>
+                <td>
+                   <%= order_product.order.status  %>
+                 </td>
+            </tbody>
+        <% end %>
+        </table>
+   </div>
+  </div>
+</div>
