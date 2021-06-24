@@ -20,7 +20,7 @@ namespace :customer,path: "" do
   patch "customers/out" => "customers#out"
   resources :customers,only: [:show,:edit,:update]
 
-  delete 'cart_products' => 'all_destroy'
+  delete 'cart_products' => 'cart_products#all_destroy'
   resources :cart_products,only:[:index,:update,:create,:destroy]
 
   resources :products,only: [:show,:index]
