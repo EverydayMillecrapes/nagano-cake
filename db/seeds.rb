@@ -22,3 +22,41 @@ Product.create!(
    introduction: "あすかちゃんの手作りミルクレープ",
    non_tax_price: 1000,
 )
+   
+   Customer.create!(
+   id: 1,
+   email: "natsu.coco3108@gmail.com",
+   password: "natsu1995",
+   created_at: "2021-06-24 09:11:52",
+   updated_at: "2021-06-24 09:12:10",
+   last_name: "瀧井",
+   first_name: "夏",
+   first_name_kana: "ナツ",
+   last_name_kana: "タキイ",
+   postcode: "2760045",
+   address: "千葉県八千代市大和田",
+   phone_number: "09058453165",
+   is_deleted: false,
+)
+
+Order.create!(
+   id: 1,
+   customer_id: 1,
+   name: "瀧井夏",
+   postcode: 2760045,
+   address: "千葉県八千代市大和田",
+   postage: 800,
+   total_amount: 2120,
+   payment_method: 0,
+   status: 0,
+)
+
+OrderProduct.create!(
+   id: 1,
+   amount: 2,
+   status: 0,
+   tax_price: 1320,
+   order_id: 1,
+   product_id: 1,
+   )
+   

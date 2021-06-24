@@ -9,5 +9,7 @@ class Customer < ApplicationRecord
   end
   
   has_many :deliveries
+  has_many :orders
+  has_many :cart_products
   
 end
