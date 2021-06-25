@@ -1,21 +1,35 @@
 <%= render 'layouts/customer_header' %>
-<div class="container">
+<div class="container my-5">
   <div class="row">
-    <div class="col-xs-9 col-xs-offset-1 top-main">
-      <div class="row product-card-content">
+  	<div class="mx-auto">
+  	   <div class="col-8">
         <h3>新着商品</h4>
+       </div>
+       <div class="col-5">
         <% @products.each do |product| %>
         <%= link_to customer_product_path(product.id) do %>
-        <div class="thumbnail product-thumbnail col-xs-2">
-         <p><%= attachment_image_tag product, :image, :size => '300x300' %></p>
+       </div>
+        <div class="row mt-3">
+         <p><%= attachment_image_tag product, :image, :size => '500x300' %></p>
+        </div>
+        <% end %>
           <div class="caption">
             <p><%= product.name %></p>
             <p><%= "#{product.non_tax_price}円" %></p>
+           </div>
+          <%= link_to "全ての商品を見る", customer_products_path  %>
           </div>
         </div>
-        <% end %>
-        <% end %>
       </div>
-    </div>
-  </div>
+        <% end %>
+      <div class="container">
+      <div class="row">
+      <h3>ようこそ、ながのCAKEへ！</h3>
+　<h3>このサイトは、ケーキ販売のECサイトになります。</h3>
+　<h3>会員でない⽅も商品の閲覧はできますが、</h3>
+　<h3>購⼊には会員登録が必要になります。</h3>
+　</div>
+　</div>
+ </div>
+</div>
 </div>
