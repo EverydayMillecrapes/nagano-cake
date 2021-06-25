@@ -18,7 +18,7 @@
         <% @order_products.each do |order_product| %>
             <tbody>
                  <td>
-                   <%= order_product.order.created_at.strftime("%Y/%m/%d/ %H:%M:%S") %>
+                   <%= link_to order_product.order.created_at.strftime("%Y/%m/%d/ %H:%M:%S"),admin_order_path(order_product) %>
                  </td>
                  <td>
                    <%= order_product.order.customer.full_name %>
