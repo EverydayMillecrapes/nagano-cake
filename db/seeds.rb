@@ -46,7 +46,7 @@ Order.create!(
    postcode: 2760045,
    address: "千葉県八千代市大和田",
    postage: 800,
-   total_amount: 2120,
+   total_amount: 2200,
    payment_method: 0,
    status: 0,
 )
@@ -55,7 +55,7 @@ OrderProduct.create!(
    id: 1,
    amount: 2,
    status: 0,
-   tax_price: 1320,
+   tax_price: 1100,
    order_id: 1,
    product_id: 1,
    )
