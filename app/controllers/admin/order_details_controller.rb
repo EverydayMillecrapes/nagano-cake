@@ -5,8 +5,14 @@ class Admin::OrderDetailsController < ApplicationController
     @order_product.update(order_product_params)
     if @order_product.status == "製作中"
       @order_product.order.update(status: 2)
+    elsif @order_product.status == "製作完了"
+      @order = @order_product.order
+      @count = @order.order_products.count
+      if @count == OrderProduct.where(status: 3,order_id: @order.id).count
+         @order_product.order.update(status: 3)
+      end
     end
-    redirect_to admin_order_path, notice: "You have updated user successfully."
+    redirect_to admin_order_path(@order), notice: "You have updated user successfully."
     
     end
     

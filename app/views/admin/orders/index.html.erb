@@ -16,19 +16,19 @@
             </thead>
 
         
-        <% @order_products.each do |order_product| %>
+        <% @orders.each do |order| %>
             <tbody>
                  <td>
-                   <%= link_to order_product.order.created_at.strftime("%Y/%m/%d/ %H:%M:%S"),admin_order_path(order_product) %>
+                   <%= link_to order.created_at.strftime("%Y/%m/%d/ %H:%M:%S"),admin_order_path(order) %>
                  </td>
                  <td>
-                   <%= order_product.order.customer.full_name %>
+                   <%= order.customer.full_name %>
                  </td>
                  <td>
-                   <%= order_product.amount %>
+                   <%= order.order_products.sum(:amount) %>
                  </td>
                 <td>
-                   <%= order_product.order.status  %>
+                   <%= order.status  %>
                  </td>
             </tbody>
         <% end %>
