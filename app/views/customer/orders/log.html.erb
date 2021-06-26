@@ -1,0 +1,91 @@
+<%= render 'layouts/customer_header' %>
+<h2 class="head-line title_h2 text-center">注文情報確認</h2>
+<div calss="row">
+  <div class="col-xs-9">
+    <% if current_customer.cart_products.present? %>
+      <table class="table table-hover table-inverse table-bordered">
+        <thead>
+          <tr class="info">
+            <th>商品名</th>
+            <th>単価(税込)</th>
+            <th>数量</th>
+            <th>小計</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @sum = 0 %>
+          <% @postage = 800 %>
+          <% @cart_products.each do |cart_product| %>
+            <tr>
+              <td class="text-left">
+                <%= attachment_image_tag( cart_product.product, :image, size: "60x50", fallback: "no_image.jpg") %>
+                <%= cart_product.product.name %>
+              </td>
+              <td class="text-right">
+                ¥<%= cart_product.product.non_tax_price.to_s(:delimited) %>
+              </td>
+              <td class="text-right">
+                  <%= cart_product.amount %>
+              </td>
+              <td class="text-right">
+                ¥<%= cart_product.product.non_tax_price * cart_product.amount %>
+              </td>
+            </tr>
+            <% @sum += cart_product.product.non_tax_price * cart_product.amount %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-xs-3 total_amount">
+      <table class="table table-hover table-condensed table-bordered">
+          <tr>
+            <th class="info">送料</th>
+            <td class="text-right col-xs-5">¥<%= @postage.to_s(:delimited) %></td>
+          </tr>
+          <tr>
+            <th class="info">商品合計</th>
+            <td class="text-right">¥<%= @sum.to_s(:delimited) %></td>
+          </tr>
+          <tr>
+            <th class="info">請求金額</th>
+            <td class="text-right"><% @total_amount = @sum + @postage %>¥<%= @total_amount.to_s(:delimited) %></td>
+          </tr>
+      </table>
+    </div>
+    <div class="col-xs-9 billing">
+      <table class="table table-hover table-condensed table-bordered">
+        <tr>
+          <th  class="info">支払方法</th>
+          <td class="text-left">
+            <%= @order.payment_method %>
+          </td>
+        </tr>
+        <tr>
+          <th  class="info">お届け先</th>
+          <td class="text-left">
+            <%= @order.postcode + @order.address + @order.name %>
+          </td>
+        </tr>
+      </table>
+
+      <div class ="col-xs-11">
+      <%= form_for(@order, url:customer_orders_path, method: :post,) do |f| %>
+        <%= f.hidden_field :postcode %>
+        <%= f.hidden_field :address %>
+        <%= f.hidden_field :name %>
+        <%= f.hidden_field :payment_method %>
+        <%= f.hidden_field :total_amount, :value => @total_amount %>
+        <%= f.hidden_field :customer_id, :value => current_customer.id %>
+        <%= f.hidden_field :postage, :value => @postage %>
+        　　<i class="fas fa-shipping-fast fa-2x"></i>
+        <%= f.submit "購入を確定する", class: "btn btn-warning center-block col-xs-5" %>
+      <% end %>
+      </div>
+
+    <% else %>
+        <!-- if カートアイテムがない時 -->
+        <p>お客様のショッピングカートに商品はありませんので注文確定ができません。</p>
+        <p><%= link_to "商品一覧", customer_products_path %>から商品をお探し下さい。</p>
+    <% end %>
+  </div>
+</div>

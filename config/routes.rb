@@ -24,7 +24,7 @@ namespace :customer,path: "" do
   resources :cart_products,only:[:index,:update,:create,:destroy]
 
   resources :products,only: [:show,:index]
-  post 'orders/log' => 'customers#log'
+  post 'orders/log' => 'orders#log'
   get 'orders/thanx' => 'orders#thanx'
   resources :orders, only: [:new, :create, :index, :show]
   resources :deliveries, only: [:index, :create, :destroy, :edit, :update]
