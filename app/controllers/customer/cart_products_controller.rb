@@ -20,8 +20,8 @@ class Customer::CartProductsController < ApplicationController
 
  def update
    @cart_product = CartProduct.find(params[:id])
-   @cart_products.update(cart_product_params)
-   redirect_to customer_cart_product_path
+   @cart_product.update(cart_product_params)
+   redirect_to customer_cart_products_path
  end
 
  def destroy

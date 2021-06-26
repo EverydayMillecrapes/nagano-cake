@@ -33,7 +33,7 @@
                 <td class="align-middle"><%= (cart_product.product.non_tax_price * 1.1).floor %></td>
                 <td class="align-middle" style="width: 130px;">
 
-                  <%= form_for(cart_product, url: {controller: 'cart_products', method: :PATCH }) do |f| %>
+                  <%= form_for(cart_product, url: customer_cart_product_path(cart_product),method: :PATCH) do |f| %>
                   <div class="row">
                     <%= f.number_field :amount, min:1,class: "col-6" %>
                     <%= f.submit "変更", class: "btn btn-sm btn-outline-danger offset-1 col-4" %>

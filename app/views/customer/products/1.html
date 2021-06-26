@@ -1,0 +1,9 @@
+ @cart_products = current_customer.cart_products
+    @cart_products.each do |cart_product|
+    OrderProduct.create(
+      product:  cart_product.product,
+      order:    @order,
+      amount: cart_product.amount,
+      tax_price: tax_price(cart_product)
+    )
+      @cart_products.destroy_all
