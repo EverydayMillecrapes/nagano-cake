@@ -1,4 +1,5 @@
 class Admin::CustomersController < ApplicationController
+    before_action :search
     
     def index
         @customers = Customer.all

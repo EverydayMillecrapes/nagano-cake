@@ -1,4 +1,5 @@
 class Customer::OrdersController < ApplicationController
+
   def new
   	@order = Order.new
   	@deliveries = Delivery.where(customer: current_customer)
@@ -59,4 +60,6 @@ class Customer::OrdersController < ApplicationController
   def order_params
    params.require(:order).permit(:customer_id, :name, :postcode, :address, :postage, :total_amount, :payment_method, :status)
   end
+  
+
 end

@@ -19,6 +19,11 @@ class ApplicationController < ActionController::Base
     def after_sign_out_path_for(resource)
       customer_root_path
     end
+    
+    def search
+      @q = Product.ransack(params[:q])
+      @Productss = @q.result(distinct: true)
+    end
 
   		# devise_parameter_sanitizer.permit(:sign_in, keys: [:email])
 

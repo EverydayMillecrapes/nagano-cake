@@ -1,4 +1,5 @@
 class Admin::ProductsController < ApplicationController
+    before_action :search
     def new
      @product = Product.new
     end
