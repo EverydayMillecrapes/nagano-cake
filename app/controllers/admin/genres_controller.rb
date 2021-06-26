@@ -1,4 +1,6 @@
 class Admin::GenresController < ApplicationController
+    before_action :search
+    
 def create
     @genre = Genre.new(genre_params)
     @genre.save

@@ -16,13 +16,23 @@ Genre.create!(
 )
 
 Product.create!(
+   id: 1,
    genre_id: 1,
    image_id: nil,
    name: "ミルクレープ",
    introduction: "あすかちゃんの手作りミルクレープ",
    non_tax_price: 1000,
 )
-   
+
+Product.create!(
+   id: 2,
+   genre_id: 1,
+   image_id: nil,
+   name: "ショートケーキ",
+   introduction: "とちおとめのショートケーキ",
+   non_tax_price: 800,
+)
+
    Customer.create!(
    id: 1,
    email: "natsu.coco3108@gmail.com",
@@ -60,3 +70,11 @@ OrderProduct.create!(
    product_id: 1,
    )
    
+OrderProduct.create!(
+   id: 2,
+   amount: 1,
+   status: 0,
+   tax_price: 800,
+   order_id: 1,
+   product_id: 2,
+   )

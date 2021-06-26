@@ -10,4 +10,4 @@
     <p>会員ステータス <%= @customer.is_deleted ? "退会":"有効" %></p>
 </div>
 <div><%= link_to "編集する", edit_admin_customer_path %></div>
-<div><%= link_to "注文履歴一覧を見る", admin_orders_path %></div>
+<div><%= link_to "注文履歴一覧を見る", admin_orders_path(order_sort: @customer.id) %></div>
