@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210617223215) do
+ActiveRecord::Schema.define(version: 20210624145801) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email"
-    t.string   "encrypted_password" 
-    # 確認用パスワード
+    t.string   "encrypted_password"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.string   "reset_password_token"
@@ -70,10 +69,10 @@ ActiveRecord::Schema.define(version: 20210617223215) do
 
   create_table "order_products", force: :cascade do |t|
     t.integer  "amount"
-    t.string   "status",     default: "0"
+    t.integer  "status",     default: 0
     t.integer  "tax_price"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "order_id"
     t.integer  "product_id"
   end

@@ -1,6 +1,14 @@
-<h1>About</h1>
-<h3>ながのCAKEは全国発送可能なケーキ屋さんです。</h3>
-<h3>お⼦様からお年寄りの⽅までお召し上がりいただけるよう、</h3>
-<h3>様々なバリエーションをご⽤意しております。</h3>
-<h3>また、全国へ発送可能ですので「いつ」でも「どこ」でもご注⽂いただけます。</h3>
-<h3>ぜひご注⽂ください。</h3>
+<%= render 'layouts/customer_header' %>
+<div class="container">
+  <div class="row">
+    <div class='px-3 mx-auto'>
+　　 <h1>About</h1>
+     <h3>ながのCAKEは全国発送可能なケーキ屋さんです。</h3>
+     <h3>お⼦様からお年寄りの⽅までお召し上がりいただけるよう、</h3>
+     <h3>様々なバリエーションをご⽤意しております。</h3>
+     <h3>また、全国へ発送可能ですので「いつ」でも「どこ」でもご注⽂いただけます。</h3>
+     <h3>ぜひご注⽂ください。</h3>
+     <%= attachment_image_tag @product, :image,  format: "jpeg", fallback: 'https://www.pakutaso.com/shared/img/thumb/PPO_shikkuiichigonosyo-tocake_TP_V.jpg', width: '80%', height: '80%', class: "rounded" %>
+     </div>
+  </div>
+</div>
