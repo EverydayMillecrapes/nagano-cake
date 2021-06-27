@@ -1,24 +1,37 @@
-# README
+# Ngano-Cake
+≪ながのCAKE≫の商品を通販するためのECサイト。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 概要
 
-Things you may want to cover:
+## 顧客側の機能
 
-* Ruby version
+アカウント作成なしでながのCAKEの商品の閲覧が可能。  
+通販を利用する場合は、お客様にアカウント作成をして頂き、商品をカートに入れ注文が可能。  
+商品の配送先は自宅以外にも登録ができ、プレゼントとして配送することも可能。  
+注文から届くまでの状況を注文ステータスとして確認が可能。  
+　
+ 
+## 管理者側の機能
+ 
+商品、ジャンル、顧客情報の編集が可能。  
+お客様からの注文の管理、配送までの管理が可能。  
 
-* System dependencies
+# 機能
 
-* Configuration
+deviceを使用したログイン機能。  
+検索フォームから検索可能な機能の実装。  
+SNSアイコンの実装。
 
-* Database creation
+# 使い方
 
-* Database initialization
+管理者ログインはメールアドレスを【every_day_milecrapes@gmail.com】、パスワードは【dmm2021】で使用できます。  
+顧客側の場合、新規作成で好きなアカウントを作成しても利用が可能です。
 
-* How to run the test suite
+# バージョン
 
-* Services (job queues, cache servers, search engines, etc.)
+- Rails 5.0.0  
+- Ruby 2.6.3
 
-* Deployment instructions
+# 作者
 
-* ...
+安田陸　原謙介　瀧井夏　河内慶太
