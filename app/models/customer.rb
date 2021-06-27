@@ -16,4 +16,8 @@ class Customer < ApplicationRecord
       return Customer.all unless search
       Customer.where("first_name like? OR last_name like?","%#{search}%","%#{search}%")
   end
+  
+  def active_for_authentication?
+    super && (self.is_deleted == false)
+  end
 end

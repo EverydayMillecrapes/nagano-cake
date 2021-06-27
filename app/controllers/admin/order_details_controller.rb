@@ -12,7 +12,7 @@ class Admin::OrderDetailsController < ApplicationController
          @order_product.order.update(status: 3)
       end
     end
-    redirect_to admin_order_path(@order), notice: "You have updated user successfully."
+    redirect_to admin_order_path(@order_product.order), notice: "You have updated user successfully."
     
     end
     
