@@ -1,17 +1,22 @@
 <%= render 'layouts/customer_header' %>
+
+	
 <div class="container my-5">
- <div class="row">
-  <div class='px-3 mx-auto'>
-	<h2 class="product-headline head-line title_h2 text-center">
+  
+  <h2 class="product-headline head-line title_h2 text-center">
 	  商品一覧
 	  <span>
 		(全<%= @products.total_count %>件中　<%= @products.count %>件)
 	  </span>
+	  <div><%= paginate(@products) %></div>
 	</h2>
-	  <div class="clearfix product-box">
+  
+  
+   <div class="row">
+
 		<% @products.each do |product| %>
 
-          <div class="product-container">
+          <div class="col-lg-3 col-md-5 mb-5 my-5">
 
             <%= link_to customer_product_path(product.id), class: "btn-link", :style=>"color:#0099FF;" do %>
             <div id="img_field" class="product">
@@ -22,15 +27,15 @@
             </p>
             <% end %>
 
-          <% if product.is_active == true %>
-          <p>¥<%= product.non_tax_price.to_s(:delimited) %></p>
-          <% elsif product.is_active == false %>
-          <p class="soldout">売り切れ中</p>
-          <% end %>
+            <% if product.is_active == true %>
+            <p>¥<%= product.non_tax_price.to_s(:delimited) %></p>
+            <% elsif product.is_active == false %>
+            <p class="soldout">売り切れ中</p>
+            <% end %>
           </div>
 		<% end %>
 	  </div>
-      <div class="text-center"><%= paginate(@products) %></div>
+  
    </div>
   </div>
 </div>
