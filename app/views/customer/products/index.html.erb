@@ -1,16 +1,24 @@
 <%= render 'layouts/customer_header' %>
-<div class="container my-5">
-  	<h2 class="product-headline head-line title_h2 text-center">
-	  商品一覧
-  	  <span>
-	    	(全<%= @products.total_count %>件中　<%= @products.count %>件)
-	    </span>
-	  </h2>
-	    <div class="row">
-	  	<% @products.each do |product| %>
 
-        <div class="col-md-3">
-          <%= link_to customer_product_path(product.id), class: "btn-link", :style=>"color:#0099FF;" do %>
+	
+<div class="container my-5">
+  
+  <h2 class="product-headline head-line title_h2 text-center">
+	  商品一覧
+	  <span>
+		(全<%= @products.total_count %>件中　<%= @products.count %>件)
+	  </span>
+	  <div><%= paginate(@products) %></div>
+	</h2>
+  
+  
+   <div class="row">
+
+		<% @products.each do |product| %>
+
+          <div class="col-lg-3 col-md-5 mb-5 my-5">
+
+            <%= link_to customer_product_path(product.id), class: "btn-link", :style=>"color:#0099FF;" do %>
             <div id="img_field" class="product">
               <%= attachment_image_tag(product, :image, size: "180x130", fallback: "noimage.jpg") %>
             </div>
@@ -19,13 +27,16 @@
             </p>
           <% end %>
 
-          <% if product.is_active == true %>
-          <p>¥<%= product.non_tax_price.to_s(:delimited) %></p>
-          <% elsif product.is_active == false %>
-          <p class="soldout">売り切れ中</p>
-          <% end %>
-        </div>
-	  	<% end %>
-     <div class="text-center"><%= paginate(@products) %></div>
+
+            <% if product.is_active == true %>
+            <p>¥<%= product.non_tax_price.to_s(:delimited) %></p>
+            <% elsif product.is_active == false %>
+            <p class="soldout">売り切れ中</p>
+            <% end %>
+          </div>
+		<% end %>
+	  </div>
+  
+   </div>
   </div>
 </div>

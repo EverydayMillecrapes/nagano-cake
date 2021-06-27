@@ -11,4 +11,9 @@ class Customer < ApplicationRecord
   has_many :deliveries
   has_many :orders
   has_many :cart_products,dependent: :destroy
+  
+  def self.search(search)
+      return Customer.all unless search
+      Customer.where("first_name like? OR last_name like?","%#{search}%","%#{search}%")
+  end
 end

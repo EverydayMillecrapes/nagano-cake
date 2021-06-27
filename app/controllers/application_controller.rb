@@ -21,8 +21,8 @@ class ApplicationController < ActionController::Base
     end
     
     def search
-      @q = Product.ransack(params[:q])
-      @Productss = @q.result(distinct: true)
+      @customer = Customer.search(params[:keyword])
+      @keyword = params[:keyword]
     end
 
   		# devise_parameter_sanitizer.permit(:sign_in, keys: [:email])
