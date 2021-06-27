@@ -1,4 +1,6 @@
-<h2><%= @customer.last_name %>さんの会員詳細</h2>
+<%= render 'layouts/admin_header' %>
+<div class="container my-5">
+<h2><%= @customer.full_name %>さんの会員詳細</h2>
 <div>
     <p>会員ID <%= @customer.id %></P>
     <p>氏名　<%= @customer.last_name %> <%= @customer.first_name %></p>

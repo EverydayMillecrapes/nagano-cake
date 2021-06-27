@@ -23,7 +23,12 @@
         </ul>
       <% end %> 
       
-
+<div class="search-form">
+  <%= form_tag(admin_search_path, :method => "get") do %>
+   <%= text_field_tag :keyword %>
+   <%= submit_tag "検索" %>
+   <% end %>
+</div>
     </div>
   </div>
 </nav>

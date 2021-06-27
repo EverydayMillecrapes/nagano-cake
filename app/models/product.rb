@@ -8,5 +8,8 @@ class Product < ApplicationRecord
 
 	attachment :image
 # 	enum status: [:販売可, :販売不可]
+  def tax_price
+    (non_tax_price * 1.1).floor
+  end
 end
 
