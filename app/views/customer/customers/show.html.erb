@@ -56,19 +56,16 @@
    <div class="row">
 	<%= link_to "編集する", edit_customer_customer_path(@customer), class: "btn btn-outline-danger mx-auto my-1" %>
    </div>
-   <div class="row">
-	<%= link_to "パスワードを変更する", edit_customer_registration_path, class: "btn btn-outline-danger mx-auto my-1" %>
-   </div>
 
  </div>
 
-  <div class="offset-sm-1 col-sm-3">
+  <div class="offset-sm-2col-sm-5">
    <div class="row">
-	<%= link_to "配送先一覧を見る", customer_deliveries_path, class: "btn btn-primary btn-outline-danger my-1" %>
+	<%= link_to "配送先一覧を見る", customer_deliveries_path, class: "btn btn-outline-danger mx-auto my-3" %>
    </div>
-   <div class="row">
-	<%= link_to "注文履歴一覧を見る", customer_orders_path, class: "btn btn-primary btn-outline-danger my-1" %>
 
+   <div class="row">
+	<%= link_to "注文履歴一覧を見る", customer_orders_path, class: "btn btn-outline-danger mx-auto my-3" %>
    </div>
-  </div>
+   </div>
 </div>

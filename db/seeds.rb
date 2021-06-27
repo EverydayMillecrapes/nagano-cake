@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Admin.create!(
-   email: 'every.day_milecrapes@gmail.com',
+   email: 'every_day_milecrapes@gmail.com',
    password: 'dmm2021',
 )
 
@@ -69,7 +69,7 @@ OrderProduct.create!(
    order_id: 1,
    product_id: 1,
    )
-   
+
 OrderProduct.create!(
    id: 2,
    amount: 1,
