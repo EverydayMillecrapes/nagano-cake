@@ -18,7 +18,7 @@
           <% @cart_products.each do |cart_product| %>
             <tr>
               <td class="text-left">
-                <%= attachment_image_tag( cart_product.product, :image, size: "60x50", fallback: "no_image.jpg") %>
+                <%= attachment_image_tag( cart_product.product, :image, size: "60x50", fallback: "noimage.jpg") %>
                 <%= cart_product.product.name %>
               </td>
               <td class="text-right">
@@ -28,10 +28,10 @@
                   <%= cart_product.amount %>
               </td>
               <td class="text-right">
-                ¥<%= cart_product.product.non_tax_price * cart_product.amount %>
+                ¥<%= (cart_product.product.non_tax_price * cart_product.amount).to_s(:delimited)  %>
               </td>
             </tr>
-            <% @sum += cart_product.product.non_tax_price * cart_product.amount %>
+            <% (@sum += (cart_product.product.non_tax_price * cart_product.amount)).to_s(:delimited) %>
           <% end %>
         </tbody>
       </table>
@@ -68,7 +68,7 @@
         </tr>
       </table>
 
-      <div class ="col-xs-11">
+      <div class ="col-xs-11 text-center">
       <%= form_for(@order, url:customer_orders_path, method: :post,) do |f| %>
         <%= f.hidden_field :postcode %>
         <%= f.hidden_field :address %>

@@ -1,9 +1,11 @@
- @cart_products = current_customer.cart_products
-    @cart_products.each do |cart_product|
-    OrderProduct.create(
-      product:  cart_product.product,
-      order:    @order,
-      amount: cart_product.amount,
-      tax_price: tax_price(cart_product)
-    )
-      @cart_products.destroy_all
+<div class="row">
+          <% @listings.each do |listing| %>
+          <div class="col-md-4">
+             <div>
+                <%= link_to listing_path(listing) do %>
+                  <%= image_tag listing.main_photos[0].image.url,class:"image-s" %>
+                <% end %>
+             </div>
+           </div>
+         <% end %>
+</div>

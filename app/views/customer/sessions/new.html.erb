@@ -1,5 +1,7 @@
 <%= render 'layouts/customer_header' %>
-<h2>ログイン </h2>
+<div class="container my-5">
+  <div class="col-mx-auto">
+    <h2>ログイン </h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -25,3 +27,5 @@
 <% end %>
 
 <%= render "customer/shared/links" %>
+  </div>
+</div>
