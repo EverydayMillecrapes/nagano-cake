@@ -1,17 +1,14 @@
 <%= render 'layouts/admin_header' %>
 <div class="container my-5">
  <div class="row">
- </div>
-
- <div class="row my-3">
   <div class="offset-sm-3">
    <h2 class="red-border px-3 pb-1">商品詳細</h2>
   </div>
  </div>
 
  <div class="row">
-  <div class="offset-sm-4 col-sm-4">
-      <%= attachment_image_tag @product, :image, size:"300x300"  %>
+  <div class="offset-sm-4 col-sm-8 mx-auto">
+      <%= attachment_image_tag @product, :image, size:"400x300"  %>
    <table class="table table-borderless table-hover">
     <tr class="brown-border">
      <td>商品名</td>
@@ -33,8 +30,8 @@
 	</tr>
 
 	<tr class="brown-border">
-	 <td>税抜価格</br>税込価格</td>
-	 <td colspan="2"><%= @product.non_tax_price %>(<%= (@product.non_tax_price * 1.1).floor %>円 (税込))円</td>
+	 <td>税抜価格</br>(税込価格)</td>
+	 <td colspan="2"><%= @product.non_tax_price.to_s(:delimited) %>(<%= @product.tax_price.to_s(:delimited) %>)円</td>
 	</tr>
 
 	<tr class="brown-border">
