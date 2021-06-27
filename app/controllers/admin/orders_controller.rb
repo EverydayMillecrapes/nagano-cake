@@ -8,7 +8,6 @@ def index
         @orders = Order.where(customer_id: params[:order_sort])
     end
     @order_products = OrderProduct.all
-    @orders = Order.all
 end
 
 def search

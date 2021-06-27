@@ -1,8 +1,9 @@
 class Customer::DeliveriesController < ApplicationController
 
   def index
+    @customer = current_customer
     @delivery = Delivery.new
-    @deliveries = Delivery.all
+    @deliveries = @customer.deliveries.all
   end
 
   def create
