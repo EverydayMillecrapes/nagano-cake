@@ -27,7 +27,7 @@
             <tbody>
               <tr class="brown-border">
                 <td class="align-middle">
-                  <%= attachment_image_tag cart_product.product, :image, size: "50x50", fallback: "no_image.jpg" %>
+                  <%= attachment_image_tag cart_product.product, :image, size: "50x50", fallback: "noimage.jpg" %>
                   <span><%= cart_product.product.name %></span>
                 </td>
                 <td class="align-middle"><%= (cart_product.product.non_tax_price * 1.1).floor %></td>

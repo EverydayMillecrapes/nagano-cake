@@ -25,7 +25,8 @@
             <p class="products-name">
               <%= product.name %>
             </p>
-            <% end %>
+          <% end %>
+
 
             <% if product.is_active == true %>
             <p>¥<%= product.non_tax_price.to_s(:delimited) %></p>
