@@ -1,0 +1,22 @@
+<%= render 'layouts/customer_header' %>
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      
+      <strong>本当に退会しますか？</strong>
+      
+      <h3>
+        退会すると、会員登録情報や</tb>
+        これまでの購⼊履歴が閲覧できなくなります。</tb>
+        退会する場合は、「退会する」をクリックしてください。
+      </h3>
+      
+      
+      <div>
+        <%= f.submit "退会しない", class: 'btn btn-primary btn-block' %>
+        <%= f.submit "退会する", class: 'btn btn-danger btn-block' %>
+      </div>
+      
+    </div>
+  </div>
+</div>

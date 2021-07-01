@@ -1,0 +1,55 @@
+
+<%= render 'layouts/admin_header' %>
+<div class="container my-5">
+ <div class="row">
+ </div>
+
+ <div class="row my-3">
+  <div class="offset-sm-3">
+   <h2>商品新規登録</h2>
+ <div class="row">
+<%= form_for(@product, url: {controller: 'products', action: 'create' }) do |f| %>
+      <div class="form-group">
+        <%= f.label :商品画像 %>
+        <div class="row">
+          <%= f.attachment_field :image %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :商品名 %>
+          <%= f.text_field :name %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :商品説明 %>
+        <div class="row">
+        <%= f.text_area :introduction %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :ジャンル %>
+        <%= f.collection_select :genre_id, Genre.all, :id, :name, { include_blank: "選択してください"} %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :税抜き価格 %>
+        <lavel><%= f.text_field :non_tax_price %>円</lavel>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :販売ステータス %>
+        <lavel><%= f.radio_button :is_active,"true" %>販売中</lavel>
+        <lavel><%= f.radio_button :is_active,"false" %>販売停止中</lavel>
+      </div>
+
+      <div class="row">
+        <%= f.submit "新規登録" %>
+      </div>
+    <% end %>
+      </div>
+       </div>
+
+  </div>
+</div>

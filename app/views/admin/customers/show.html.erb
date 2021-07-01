@@ -1,0 +1,15 @@
+<%= render 'layouts/admin_header' %>
+<div class="container my-5">
+<h2><%= @customer.full_name %>さんの会員詳細</h2>
+<div>
+    <p>会員ID <%= @customer.id %></P>
+    <p>氏名　<%= @customer.last_name %> <%= @customer.first_name %></p>
+    <P>フリガナ <%= @customer.last_name_kana %> <%= @customer.first_name_kana %></P>
+    <p>郵便番号 <%= @customer.postcode %></p>
+    <p>住所 <%= @customer.address %></p>
+    <p>電話番号 <%= @customer.phone_number %></p>
+    <p>メールアドレス <%= @customer.email %></p>
+    <p>会員ステータス <%= @customer.is_deleted ? "退会":"有効" %></p>
+</div>
+<div><%= link_to "編集する", edit_admin_customer_path %></div>
+<div><%= link_to "注文履歴一覧を見る", admin_orders_path(order_sort: @customer.id) %></div>

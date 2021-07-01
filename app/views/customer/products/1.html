@@ -1,0 +1,11 @@
+<div class="row">
+          <% @listings.each do |listing| %>
+          <div class="col-md-4">
+             <div>
+                <%= link_to listing_path(listing) do %>
+                  <%= image_tag listing.main_photos[0].image.url,class:"image-s" %>
+                <% end %>
+             </div>
+           </div>
+         <% end %>
+</div>
